@@ -2,8 +2,6 @@ version: '3.5'
 services:
  zabbix-server:
   image: zabbix/zabbix-server-mysql:ubuntu-6.4-latest
-  container_name: "zabbix server"
-  hostname: "zabbix_server"
   ports:
    - "10051:10051"
   restart: unless-stopped
@@ -231,8 +229,6 @@ services:
 
  zabbix-web-nginx-mysql:
   image: zabbix/zabbix-web-nginx-mysql:ubuntu-6.4-latest
-  container_name: "zabbix nginx"
-  hostname: "zabbix_nginx"
   ports:
    - "80:8080"
    - "443:8443"
@@ -288,8 +284,6 @@ services:
 
  zabbix-agent:
   image: zabbix/zabbix-agent:ubuntu-6.4-latest
-  container_name: "zabbix agent"
-  hostname: "zabbix_agent"
   ports:
    - "10050:10050"
   restart: unless-stopped

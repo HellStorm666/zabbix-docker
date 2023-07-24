@@ -275,6 +275,7 @@ services:
      - zabbix-web-nginx-ubuntu-mysql
      - zabbix-web-nginx-mysql-ubuntu
    zbx_net_frontend:
+   Cloudflared:
   stop_grace_period: 10s
   sysctls:
    - net.core.somaxconn=65535
@@ -478,6 +479,8 @@ networks:
       driver: default
       config:
       - subnet: 172.16.239.0/24
+    Cloudflared:
+      external: true
 
 volumes:
   snmptraps:

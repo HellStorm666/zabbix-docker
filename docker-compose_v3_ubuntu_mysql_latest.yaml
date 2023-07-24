@@ -282,9 +282,6 @@ services:
 
  zabbix-agent:
   image: zabbix/zabbix-agent:ubuntu-6.4-latest
-  profiles:
-   - full
-   - all
   ports:
    - "10050:10050"
   volumes:
@@ -321,9 +318,6 @@ services:
 
  zabbix-java-gateway:
   image: zabbix/zabbix-java-gateway:ubuntu-6.4-latest
-  profiles:
-   - full
-   - all
   ports:
    - "10052:10052"
   deploy:
@@ -350,9 +344,6 @@ services:
 
  zabbix-snmptraps:
   image: zabbix/zabbix-snmptraps:ubuntu-6.4-latest
-  profiles:
-   - full
-   - all
   ports:
    - "162:1162/udp"
   volumes:
@@ -379,9 +370,6 @@ services:
 
  zabbix-web-service:
   image: zabbix/zabbix-web-service:ubuntu-6.4-latest
-  profiles:
-   - full
-   - all
   ports:
    - "10053:10053"
   volumes:

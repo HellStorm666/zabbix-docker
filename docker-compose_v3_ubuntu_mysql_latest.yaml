@@ -282,6 +282,13 @@ services:
    com.zabbix.webserver: "nginx"
    com.zabbix.dbtype: "mysql"
    com.zabbix.os: "ubuntu"
+   traefik.enable: "true"
+   traefik.docker.network: "APPS"
+   traefik.http.routers.zabbix-dash.rule: "Host(`zabbix-dash.eltomation.com`)"
+   traefik.http.routers.zabbix-dash.entrypoints: "443"
+   traefik.http.routers.zabbix-dash.service: "zabbix-dash"
+   traefik.http.services.zabbix-dash.loadbalancer.server.port: "8080"
+   traefik.http.routers.zabbix-dash.middlewares: "Local-ipwhitelist@file"
 
  zabbix-agent:
   image: zabbix/zabbix-agent:ubuntu-6.4-latest

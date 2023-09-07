@@ -271,6 +271,7 @@ services:
      - zabbix-web-nginx-ubuntu-mysql
      - zabbix-web-nginx-mysql-ubuntu
    zbx_net_frontend:
+   APPS:
   stop_grace_period: 10s
   sysctls:
    - net.core.somaxconn=65535
@@ -455,6 +456,8 @@ services:
 #     - elasticsearch
 
 networks:
+  APPS:
+    external: true
   zbx_net_frontend:
     driver: bridge
     driver_opts:
@@ -462,7 +465,7 @@ networks:
     ipam:
       driver: default
       config:
-      - subnet: 172.16.238.0/24
+      - subnet: 192.168.240.0/24
   zbx_net_backend:
     driver: bridge
     driver_opts:
@@ -471,7 +474,7 @@ networks:
     ipam:
       driver: default
       config:
-      - subnet: 172.16.239.0/24
+      - subnet: 192.168.241.0/24
 
 volumes:
   snmptraps:
